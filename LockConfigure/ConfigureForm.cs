@@ -22,6 +22,7 @@ namespace LockConfigure
             }
             _settings = Settings.LoadFrom("settings.cfg");
 
+            SetControls();
             restoreUSBS();
             restoreSavedUSBS();
         }
@@ -98,6 +99,7 @@ namespace LockConfigure
         private void SetControls()
         {
             trackBar1.Value = (int)(_settings.FormOpacity * 100.0);
+            checkBox1.Checked = _settings.IsStartUp;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -133,6 +135,18 @@ namespace LockConfigure
         {
             _settings.AcceptedSerials.RemoveAll(u => u.SerialNumber == listView1.FocusedItem.SubItems[1].Text);
             restoreSavedUSBS();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            _settings.IsStartUp = checkBox1.Checked;
+            _settings.FormOpacity = trackBar1.Value / 100.0;
+            _settings.Save("settings.cfg");
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
