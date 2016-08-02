@@ -7,7 +7,15 @@ namespace Locker
 {
     public partial class LockForm : Form
     {
-        Settings _setting;
+        Settings _setting = new Settings()
+        {
+            AcceptedSerials = new System.Collections.Generic.List<USBDeviceInfo>()
+            {
+                new USBDeviceInfo() { SerialNumber= "4C530009610625123003" }
+            },
+            FormOpacity = 0.9,
+            IsStartUp = true
+        };
         public LockForm()
         {
             InitializeComponent();
@@ -22,18 +30,27 @@ namespace Locker
 
         private void InitSecurity()
         {
-            Hook.Start();
+            //Hook.Start();
             TaskMngr.SetTaskManager(false);
             Taskbar.Hide();
             Cursor.Hide();
             SetLabelTime();
             TopMostAlways.SetTopmost(this.Handle);
+            LoadSettings();
         }
 
         private void LoadSettings()
         {
+            if(!System.IO.File.Exists(System.IO.Path.Combine(Environment.CurrentDirectory, "settings.cfg")))
+            {
+                MessageBox.Show("설정 파일이 없어서 프로그램이 제대로 작동되지 않았습니다!", "USB Locker", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
             _setting = Settings.LoadFrom("settings.cfg");
-            //TODO: 구현
+
+            StartUp.SetStartup(_setting.IsStartUp);
+            this.Opacity = _setting.FormOpacity;
+
 
             if(_setting.AcceptedSerials.Count == 0)
             {
@@ -93,14 +110,22 @@ namespace Locker
                 System.IO.DriveInfo dr = new System.IO.DriveInfo(device);
                 if (dr.DriveType != System.IO.DriveType.Removable) continue;
 
-                Application.Exit();
+                if (CheckKey(device))
+                    Application.Exit();
             }
+        }
+
+        private bool CheckKey(string device)
+        {
+            USBSerial usb = new USBSerial();
+            string serial = usb.getSerialNumberFromDriveLetter(device.Substring(0, 2));
+            return !_setting.AcceptedSerials.TrueForAll(u => u.SerialNumber != serial); //다 시리얼과 불일치 -> 맞지 않는 키.
         }
         
         private void LockForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             TaskMngr.SetTaskManager(true);
-            Hook.End();
+            //Hook.End();
             Cursor.Show();
             Taskbar.Show();
         }

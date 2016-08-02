@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace USB.Config
 {
+    [Serializable]
     public class USBDeviceInfo
     {
         public string SerialNumber { get; set; }
