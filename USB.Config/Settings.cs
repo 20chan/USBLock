@@ -29,5 +29,12 @@ namespace USB.Config
                 bf.Serialize(fs, this);
             }
         }
+
+        public static Settings Default = new Settings()
+        {
+            IsStartUp = true,
+            FormOpacity = 0.9,
+            AcceptedSerials = new List<USBDeviceInfo>()
+        };
     }
 }
