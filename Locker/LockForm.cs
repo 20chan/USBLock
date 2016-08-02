@@ -32,7 +32,7 @@ namespace Locker
 
         private void LoadSettings()
         {
-            _setting = new Settings();
+            _setting = Settings.LoadFrom("settings.cfg");
             //TODO: 구현
 
             if(_setting.AcceptedSerials.Count == 0)
