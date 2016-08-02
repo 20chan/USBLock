@@ -1,6 +1,6 @@
-﻿namespace USBLock
+﻿namespace LockConfigure
 {
-    partial class Form1
+    partial class ConfigureForm
     {
         /// <summary>
         /// 필수 디자이너 변수입니다.
@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ConfigureForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(490, 370);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "ConfigureForm";
+            this.Text = "설정";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

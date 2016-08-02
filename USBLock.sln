@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBLock", "USBLock\USBLock.csproj", "{72599DFB-299E-4165-A9E1-290E1A9B7CCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Locker", "Locker\Locker.csproj", "{67DAA449-F2EF-4F19-9B47-809F6C2A17CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USB.Config", "USB.Config\USB.Config.csproj", "{88BF0134-6B12-4401-85F7-D20983C1A2B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockConfigure", "LockConfigure\LockConfigure.csproj", "{F41847AA-3802-41E9-91C8-DCDEF9265490}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{72599DFB-299E-4165-A9E1-290E1A9B7CCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72599DFB-299E-4165-A9E1-290E1A9B7CCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72599DFB-299E-4165-A9E1-290E1A9B7CCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72599DFB-299E-4165-A9E1-290E1A9B7CCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67DAA449-F2EF-4F19-9B47-809F6C2A17CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67DAA449-F2EF-4F19-9B47-809F6C2A17CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67DAA449-F2EF-4F19-9B47-809F6C2A17CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67DAA449-F2EF-4F19-9B47-809F6C2A17CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88BF0134-6B12-4401-85F7-D20983C1A2B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88BF0134-6B12-4401-85F7-D20983C1A2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88BF0134-6B12-4401-85F7-D20983C1A2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88BF0134-6B12-4401-85F7-D20983C1A2B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41847AA-3802-41E9-91C8-DCDEF9265490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41847AA-3802-41E9-91C8-DCDEF9265490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41847AA-3802-41E9-91C8-DCDEF9265490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41847AA-3802-41E9-91C8-DCDEF9265490}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace USBLock
+namespace LockConfigure
 {
-    public partial class Form1 : Form
+    public partial class ConfigureForm : Form
     {
-        public Form1()
+        public ConfigureForm()
         {
             InitializeComponent();
         }
