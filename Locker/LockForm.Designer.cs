@@ -109,6 +109,7 @@
             this.ShowInTaskbar = false;
             this.TopMost = true;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LockForm_FormClosed);
+            this.Shown += new System.EventHandler(this.LockForm_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

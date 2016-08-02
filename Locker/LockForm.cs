@@ -7,19 +7,12 @@ namespace Locker
 {
     public partial class LockForm : Form
     {
-        Settings _setting = new Settings()
-        {
-            AcceptedSerials = new System.Collections.Generic.List<USBDeviceInfo>()
-            {
-                new USBDeviceInfo() { SerialNumber= "4C530009610625123003" }
-            },
-            FormOpacity = 0.9,
-            IsStartUp = true
-        };
+        Settings _setting;
         public LockForm()
         {
             InitializeComponent();
             this.Size = new System.Drawing.Size(10000, 10000);
+            LoadSettings();
             InitSecurity();
             SetLabelPosition();
         }
@@ -36,7 +29,6 @@ namespace Locker
             Cursor.Hide();
             SetLabelTime();
             TopMostAlways.SetTopmost(this.Handle);
-            LoadSettings();
         }
 
         private void LoadSettings()
@@ -50,8 +42,7 @@ namespace Locker
 
             StartUp.SetStartup(_setting.IsStartUp);
             this.Opacity = _setting.FormOpacity;
-
-
+            
             if(_setting.AcceptedSerials.Count == 0)
             {
                 //요긴 어떻게 하지...? 비상 키라도..?
@@ -134,6 +125,11 @@ namespace Locker
         {
             SetLabelTime();
             SetLabelPosition();
+        }
+
+        private void LockForm_Shown(object sender, EventArgs e)
+        {
+            USBStateChanged();
         }
     }
 }
