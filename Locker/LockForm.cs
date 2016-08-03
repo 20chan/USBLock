@@ -32,6 +32,14 @@ namespace Locker
             TopMostAlways.SetTopmost(this.Handle);
         }
 
+        private void LockForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TaskMngr.SetTaskManager(true);
+            Hook.End();
+            Cursor.Show();
+            Taskbar.Show();
+        }
+        
         private void LoadSettings()
         {
             if(!System.IO.File.Exists(System.IO.Path.Combine(Environment.CurrentDirectory, "settings.cfg")))
@@ -58,9 +66,10 @@ namespace Locker
 
         private void SetLabelPosition()
         {
-            this.lbTime.Location = new System.Drawing.Point(Width / 2 - lbTime.Width / 2, lbTime.Location.Y);
-            this.lbDate.Location = new System.Drawing.Point(Width / 2 - lbDate.Width / 2, lbDate.Location.Y);
-            this.lbKey.Location = new System.Drawing.Point(Width / 2 - lbKey.Width / 2, lbKey.Location.Y);
+            int width = Screen.PrimaryScreen.Bounds.Width;
+            this.lbTime.Location = new System.Drawing.Point(width / 2 - lbTime.Width / 2, lbTime.Location.Y);
+            this.lbDate.Location = new System.Drawing.Point(width / 2 - lbDate.Width / 2, lbDate.Location.Y);
+            this.lbKey.Location = new System.Drawing.Point(width / 2 - lbKey.Width / 2, lbKey.Location.Y);
         }
 
         protected override void WndProc(ref Message m)
@@ -112,14 +121,6 @@ namespace Locker
             USBSerial usb = new USBSerial();
             string serial = usb.getSerialNumberFromDriveLetter(device.Substring(0, 2));
             return !_setting.AcceptedSerials.TrueForAll(u => u.SerialNumber != serial); //다 시리얼과 불일치 -> 맞지 않는 키.
-        }
-        
-        private void LockForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            TaskMngr.SetTaskManager(true);
-            Hook.End();
-            Cursor.Show();
-            Taskbar.Show();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

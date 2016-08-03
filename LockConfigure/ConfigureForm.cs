@@ -14,6 +14,7 @@ namespace LockConfigure
         public ConfigureForm()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
 
             if(!File.Exists(Path.Combine(Environment.CurrentDirectory, "settings.cfg")))
             {
