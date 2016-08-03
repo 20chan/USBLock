@@ -109,7 +109,8 @@ namespace LockConfigure
 
         private void 추가AToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ListViewItem item = listView2.FocusedItem;
+            if (listView2.SelectedItems.Count == 0) return;
+            ListViewItem item = listView2.SelectedItems[0];
             string drive = item.SubItems[0].Text;
 
             string serial = (new USBSerial()).getSerialNumberFromDriveLetter(drive.Substring(0, 2));
@@ -133,7 +134,8 @@ namespace LockConfigure
 
         private void 제거DToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            _settings.AcceptedSerials.RemoveAll(u => u.SerialNumber == listView1.FocusedItem.SubItems[1].Text);
+            if (listView1.SelectedItems.Count == 0) return;
+            _settings.AcceptedSerials.RemoveAll(u => u.SerialNumber == listView1.SelectedItems[0].SubItems[1].Text);
             restoreSavedUSBS();
         }
 

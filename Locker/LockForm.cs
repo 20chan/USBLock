@@ -11,6 +11,7 @@ namespace Locker
         public LockForm()
         {
             InitializeComponent();
+            DoubleBuffered = true;
             this.Size = new System.Drawing.Size(10000, 10000);
             LoadSettings();
             InitSecurity();
@@ -23,7 +24,7 @@ namespace Locker
 
         private void InitSecurity()
         {
-            //Hook.Start();
+            Hook.Start();
             TaskMngr.SetTaskManager(false);
             Taskbar.Hide();
             Cursor.Hide();
@@ -116,7 +117,7 @@ namespace Locker
         private void LockForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             TaskMngr.SetTaskManager(true);
-            //Hook.End();
+            Hook.End();
             Cursor.Show();
             Taskbar.Show();
         }

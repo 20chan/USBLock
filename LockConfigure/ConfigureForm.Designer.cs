@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigureForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpKeys = new System.Windows.Forms.TabPage();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.추가AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.제거DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tpSettings = new System.Windows.Forms.TabPage();
             this.gbSettings = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
-            this.추가AToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip();
-            this.제거DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tpKeys.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip2.SuspendLayout();
             this.tpSettings.SuspendLayout();
             this.gbSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
-            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -107,15 +108,29 @@
             this.columnHeader4.Text = "드라이브";
             this.columnHeader4.Width = 80;
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "이름";
+            this.columnHeader6.Width = 71;
+            // 
             // columnHeader5
             // 
             this.columnHeader5.Text = "시리얼";
             this.columnHeader5.Width = 90;
             // 
-            // columnHeader6
+            // contextMenuStrip1
             // 
-            this.columnHeader6.Text = "이름";
-            this.columnHeader6.Width = 71;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.추가AToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 26);
+            // 
+            // 추가AToolStripMenuItem
+            // 
+            this.추가AToolStripMenuItem.Name = "추가AToolStripMenuItem";
+            this.추가AToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
+            this.추가AToolStripMenuItem.Text = "추가(&A)";
+            this.추가AToolStripMenuItem.Click += new System.EventHandler(this.추가AToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -165,6 +180,20 @@
             this.columnHeader3.Text = "마지막 사용";
             this.columnHeader3.Width = 111;
             // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.제거DToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(116, 26);
+            // 
+            // 제거DToolStripMenuItem
+            // 
+            this.제거DToolStripMenuItem.Name = "제거DToolStripMenuItem";
+            this.제거DToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.제거DToolStripMenuItem.Text = "제거(&D)";
+            this.제거DToolStripMenuItem.Click += new System.EventHandler(this.제거DToolStripMenuItem_Click);
+            // 
             // tpSettings
             // 
             this.tpSettings.Controls.Add(this.gbSettings);
@@ -189,6 +218,50 @@
             this.gbSettings.TabStop = false;
             this.gbSettings.Text = "설정";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox1.Location = new System.Drawing.Point(15, 36);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(125, 19);
+            this.checkBox1.TabIndex = 3;
+            this.checkBox1.Text = "부팅시 자동 시작 :";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 15);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "창 투명도 :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(208, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(24, 15);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "0.9";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.trackBar1.LargeChange = 30;
+            this.trackBar1.Location = new System.Drawing.Point(89, 72);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(113, 45);
+            this.trackBar1.SmallChange = 10;
+            this.trackBar1.TabIndex = 0;
+            this.trackBar1.TickFrequency = 10;
+            this.trackBar1.Value = 90;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(16, 335);
@@ -209,78 +282,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // trackBar1
-            // 
-            this.trackBar1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.trackBar1.LargeChange = 30;
-            this.trackBar1.Location = new System.Drawing.Point(89, 72);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(113, 45);
-            this.trackBar1.SmallChange = 10;
-            this.trackBar1.TabIndex = 0;
-            this.trackBar1.TickFrequency = 10;
-            this.trackBar1.Value = 90;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(208, 75);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 15);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "0.9";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 75);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 15);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "창 투명도 :";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.추가AToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 26);
-            // 
-            // 추가AToolStripMenuItem
-            // 
-            this.추가AToolStripMenuItem.Name = "추가AToolStripMenuItem";
-            this.추가AToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.추가AToolStripMenuItem.Text = "추가(&A)";
-            this.추가AToolStripMenuItem.Click += new System.EventHandler(this.추가AToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip2
-            // 
-            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.제거DToolStripMenuItem});
-            this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(116, 26);
-            // 
-            // 제거DToolStripMenuItem
-            // 
-            this.제거DToolStripMenuItem.Name = "제거DToolStripMenuItem";
-            this.제거DToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.제거DToolStripMenuItem.Text = "제거(&D)";
-            this.제거DToolStripMenuItem.Click += new System.EventHandler(this.제거DToolStripMenuItem_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Location = new System.Drawing.Point(15, 36);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 19);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "부팅시 자동 시작 :";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // ConfigureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -298,12 +299,12 @@
             this.Text = "설정";
             this.tabControl1.ResumeLayout(false);
             this.tpKeys.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip2.ResumeLayout(false);
             this.tpSettings.ResumeLayout(false);
             this.gbSettings.ResumeLayout(false);
             this.gbSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
