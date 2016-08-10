@@ -9,6 +9,7 @@ namespace USB.Config
     public class Settings
     {
         public bool IsStartUp { get; set; }
+        public bool IsShowSlideShow { get; set; }
         public double FormOpacity { get; set; }
         public List<USBDeviceInfo> AcceptedSerials { get; set; }
 
@@ -32,7 +33,8 @@ namespace USB.Config
 
         public static Settings Default = new Settings()
         {
-            IsStartUp = true,
+            IsStartUp = false,
+            IsShowSlideShow = true,
             FormOpacity = 0.9,
             AcceptedSerials = new List<USBDeviceInfo>()
         };

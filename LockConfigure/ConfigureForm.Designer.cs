@@ -48,12 +48,13 @@
             this.제거DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tpSettings = new System.Windows.Forms.TabPage();
             this.gbSettings = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.cbStartUp = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.cbSlideShow = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tpKeys.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -207,7 +208,8 @@
             // 
             // gbSettings
             // 
-            this.gbSettings.Controls.Add(this.checkBox1);
+            this.gbSettings.Controls.Add(this.cbSlideShow);
+            this.gbSettings.Controls.Add(this.cbStartUp);
             this.gbSettings.Controls.Add(this.label4);
             this.gbSettings.Controls.Add(this.label3);
             this.gbSettings.Controls.Add(this.trackBar1);
@@ -218,16 +220,16 @@
             this.gbSettings.TabStop = false;
             this.gbSettings.Text = "설정";
             // 
-            // checkBox1
+            // cbStartUp
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Location = new System.Drawing.Point(15, 36);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(125, 19);
-            this.checkBox1.TabIndex = 3;
-            this.checkBox1.Text = "부팅시 자동 시작 :";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cbStartUp.AutoSize = true;
+            this.cbStartUp.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbStartUp.Location = new System.Drawing.Point(15, 36);
+            this.cbStartUp.Name = "cbStartUp";
+            this.cbStartUp.Size = new System.Drawing.Size(125, 19);
+            this.cbStartUp.TabIndex = 3;
+            this.cbStartUp.Text = "부팅시 자동 시작 :";
+            this.cbStartUp.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -282,6 +284,17 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // cbSlideShow
+            // 
+            this.cbSlideShow.AutoSize = true;
+            this.cbSlideShow.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbSlideShow.Location = new System.Drawing.Point(15, 114);
+            this.cbSlideShow.Name = "cbSlideShow";
+            this.cbSlideShow.Size = new System.Drawing.Size(137, 19);
+            this.cbSlideShow.TabIndex = 4;
+            this.cbSlideShow.Text = "이미지 슬라이드 쇼 :";
+            this.cbSlideShow.UseVisualStyleBackColor = true;
+            // 
             // ConfigureForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -334,7 +347,8 @@
         private System.Windows.Forms.ToolStripMenuItem 추가AToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
         private System.Windows.Forms.ToolStripMenuItem 제거DToolStripMenuItem;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox cbStartUp;
+        private System.Windows.Forms.CheckBox cbSlideShow;
     }
 }
 

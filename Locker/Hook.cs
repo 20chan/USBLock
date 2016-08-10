@@ -44,7 +44,8 @@ namespace Locker
 
         public static void End()
         {
-            UnhookWindowsHookEx(_hookID);
+            if (_hookID != 0)
+                UnhookWindowsHookEx(_hookID);
         }
 
         private static int HookCallback(int nCode, int wParam, ref KBDLLHOOKSTRUCT lParam)

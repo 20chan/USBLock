@@ -7,6 +7,7 @@ namespace Locker
     {
         public static void SetStartup(bool enabled)
         {
+            /*
             Microsoft.Win32.RegistryKey rkey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey
                         ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 
@@ -16,6 +17,7 @@ namespace Locker
                 rkey.DeleteValue("CaptIt", false);
 
             rkey.Close();
+            */
         }
     }
 }

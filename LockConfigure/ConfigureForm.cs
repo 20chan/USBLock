@@ -100,7 +100,8 @@ namespace LockConfigure
         private void SetControls()
         {
             trackBar1.Value = (int)(_settings.FormOpacity * 100.0);
-            checkBox1.Checked = _settings.IsStartUp;
+            cbStartUp.Checked = _settings.IsStartUp;
+            cbSlideShow.Checked = _settings.IsShowSlideShow;
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -142,7 +143,8 @@ namespace LockConfigure
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            _settings.IsStartUp = checkBox1.Checked;
+            _settings.IsStartUp = cbStartUp.Checked;
+            _settings.IsShowSlideShow = cbSlideShow.Checked;
             _settings.FormOpacity = trackBar1.Value / 100.0;
             _settings.Save("settings.cfg");
         }
